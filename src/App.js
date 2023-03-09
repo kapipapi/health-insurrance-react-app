@@ -10,7 +10,7 @@ export default function App(props) {
     <div className='App'>
       <h1>Medical inssurance cost</h1>
 <section class="formcarry-container">
-  <form action="#" method="POST" enctype="multipart/form-data">
+  <form action="#" method="POST" enctype="multipart/form-data" action="https://kapipapi-curly-adventure-7rp9vp9r9xr3www4-5000.preview.app.github.dev/">
     
     <div class="formcarry-block">
       <label for="fc-generated-1-name">Full Name</label>
@@ -24,7 +24,7 @@ export default function App(props) {
   	
     <div class="formcarry-block">
       <label for="fc-generated-1-height">Age</label>
-      <input type="range" name="height" id="fc-generated-1-height" min="0" defaultValue={age} max="100" onChange={(event) => setAge(event.target.value)}/>
+      <input type="range" name="age" id="fc-generated-1-height" min="0" defaultValue={age} max="100" onChange={(event) => setAge(event.target.value)}/>
       {age} y/o
     </div>
   	
