@@ -11,6 +11,7 @@ body {
 
 .App {
   color: #1b4049;
+  padding-top: 5rem;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
@@ -185,7 +186,7 @@ body {
 .formcarry-container select:focus:required:invalid,
 .formcarry-container select:focus:invalid
 {
-  color: hsl(var(--fc-error-hsl)); 
+  /* color: hsl(var(--fc-error-hsl));  */
   border-color: hsl(var(--fc-error-hsl));
   box-shadow: 0px 0px 0px 3px hsla(var(--fc-error-hsl), 12%);
 }
