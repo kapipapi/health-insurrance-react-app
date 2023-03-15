@@ -45,7 +45,7 @@ function Form() {
   return (
     <div>
       <section class="formcarry-container">
-        <form method="POST" enctype="multipart/form-data" action={post_url}>
+        <form method="POST" enctype="application/x-www-form-urlencoded" action={post_url}>
           
           <div class="formcarry-block">
             <label for="fc-generated-1-name">Full Name</label>
