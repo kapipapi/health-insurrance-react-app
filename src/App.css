@@ -12,7 +12,29 @@ body {
 .App {
   color: #1b4049;
   padding-top: 5rem;
+  width: 30rem;
 }
+
+.App nav {
+  text-align: center;
+}
+
+.App nav li {
+  display: inline;
+  padding: 0 1rem;
+}
+
+ @media only screen and (max-width: 30rem) {
+     .App {
+         width: 100vw;
+         padding-top: 1rem;
+     }
+
+    .Title {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+ }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
 
@@ -25,7 +47,7 @@ body {
   line-height: 24px;
   letter-spacing: -0.01em;
 
-  width: 400px;
+  width: 100%;
 
   border-radius: 1rem;
   padding: 1rem;

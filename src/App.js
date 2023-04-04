@@ -18,16 +18,14 @@ export default function App(props) {
 function Layout() {
   return (
     <div className='App'>
-      <h1>Medical inssurance cost</h1>
+      <h1 className="Title">Medical inssurance cost</h1>
       <nav>
-        <ul>
           <li>
             <Link to="/">Form</Link>
           </li>
           <li>
             <Link to="/about">About</Link>
           </li>
-        </ul>
       </nav>
 
       <hr />
