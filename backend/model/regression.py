@@ -53,7 +53,7 @@ def train(model, data):
 
 def predict_charges(data):
     data = preprocess_data(data)
-    xgb.load_model('../model/model.json')
+    xgb.load_model('./model/model.json')
 
     result = round(xgb.predict(data).astype(float).item(0), 2)
     return result

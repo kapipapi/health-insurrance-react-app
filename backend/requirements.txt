@@ -5,4 +5,6 @@ matplotlib
 seaborn
 scikit-learn
 xgboost
-
+flask
+flask_sqlalchemy
+psycopg2

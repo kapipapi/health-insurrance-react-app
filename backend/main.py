@@ -34,7 +34,6 @@ class Entry(db.Model):
         self.smoker = smoker
         self.region = region
 
-
 @app.route('/', methods=['POST'])
 def create_entry():
     content_type = request.headers.get('Content-Type')
@@ -44,12 +43,12 @@ def create_entry():
         new_data = {
             "name": form["name"],
             "email": form["email"],
-            "age": form["age"],
-            "sex": form["sex"],
-            "bmi": form['weight'] / form['height'] ** 2,
-            "children": form["children"],
-            "smoker": form["smoker"],
-            "region": form["region"]
+            "age": int(form["age"]),
+            "sex": 0,
+            "bmi": int(form['weight']) / int(form['height']) ** 2,
+            "children": int(form["children"]),
+            "smoker": int(form["smoker"]),
+            "region": 0
         }
 
         entry = Entry(name=new_data["name"],
