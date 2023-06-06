@@ -1,0 +1,23 @@
+#TODO: Add postgres environments automation
+version: "3.9"
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - database
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+  database:
+    image: postgres
+    environment:
+      POSTGRES_USER: your_username
+      POSTGRES_PASSWORD: your_password
+      POSTGRES_DB: your_database_name
+    volumes:
+      - ./data:/var/lib/postgresql/data
