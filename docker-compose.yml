@@ -14,9 +14,11 @@ services:
       - "3000:3000"
   database:
     image: postgres
+    restart: always
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: kukurydza12
       POSTGRES_DB: health-insurance-app
     volumes:
       - ./data:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/create_tables.sql

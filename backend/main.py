@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from model.regression import predict_charges
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:kukurydza12@localhost:5432/health-insurance-app'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:kukurydza12@database:5432/health-insurance-app'
 db = SQLAlchemy(app)
 
 
@@ -47,7 +47,7 @@ def create_entry():
             "sex": 0,
             "bmi": int(form['weight']) / int(form['height']) ** 2,
             "children": int(form["children"]),
-            "smoker": int(form["smoker"]),
+            "smoker": 1 if form["smoker"] == 'on' else 0,
             "region": 0
         }
 
