@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, redirect
 from flask_sqlalchemy import SQLAlchemy
 
 from model.regression import predict_charges
@@ -67,7 +67,7 @@ def create_entry():
         db.session.add(entry)
         db.session.commit()
 
-        return jsonify({'name': entry.name, 'charges': entry.charges})
+        return redirect(f"http://localhost:3000?name={entry.name}&charges={entry.charges}")
     else:
         return 'Content-Type not supported!'
 
