@@ -8,6 +8,9 @@ export default function App(props) {
             <Routes>
                 <Route path="/" element={<Layout/>}>
                     <Route index element={<Form/>}/>
+                    <Route path="/result" element={<Result/>}/>
+                    <Route path="/about" element={<About/>}/>
+                    <Route path="/table" element={<Table/>}/>
                     <Route path="*" element={<NoMatch/>}/>
                 </Route>
             </Routes>
@@ -26,6 +29,9 @@ function Layout() {
                 <li>
                     <Link to="/about">About</Link>
                 </li>
+                <li>
+                    <Link to="/table">Table</Link>
+                </li>
             </nav>
 
             <hr/>
@@ -34,6 +40,71 @@ function Layout() {
         </div>
     );
 }
+
+function Result() {
+    const query = new URLSearchParams(window.location.search);
+    const name = query.get('name')
+    const charges = query.get('charges')
+
+    return (
+        <div className='App'>
+            <h2>Result</h2>
+            <h3 className="lower">Name:</h3>
+            <h2 className="upper">{name}</h2>
+            <h3 className="lower">Insurance charges:</h3>
+            <h2 className="upper">$ {charges} $</h2>
+        </div>
+    );
+}
+
+function About() {
+    return (
+        <div className='App'>
+            <h3>Authors</h3>
+            <p>Paweł Czapla</p>
+            <p>Kacper Ledwosiński</p>
+        </div>
+    );
+}
+
+function Table() {
+    let [isLoaded, setIsLoaded] = useState(false);
+    let [data, setData] = useState([]);
+
+    if (!isLoaded) {
+        fetch("http://localhost:5000/", {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+            .then(response => response.json())
+            .then(data => {
+                setData(data)
+                setIsLoaded(true)
+            });
+    }
+
+    return (
+        <div className='App'>
+            <table>
+                <tr>
+                    <th>name</th>
+                    <th>age</th>
+                    <th>charges</th>
+                </tr>
+                {data.map((value, index) => {
+                    return <tr key={value.name + index}>
+                        <td>{value.name}</td>
+                        <td>{value.age} y/o</td>
+                        <td>{value.charges} $</td>
+                    </tr>
+                })}
+            </table>
+        </div>
+    );
+}
+
 
 function Form() {
     const [age, setAge] = useState(30);

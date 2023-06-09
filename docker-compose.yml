@@ -13,11 +13,12 @@ services:
     ports:
       - "3000:3000"
   database:
-    image: postgres
+    container_name: db
+    build: ./database
     restart: always
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: kukurydza12
-      POSTGRES_DB: health-insurance-app
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=kukurydza12
     volumes:
-      - ./data:/var/lib/postgresql/data
+      - ./data/db:/var/lib/postgresql/data
+      - ./database:/docker-entrypoint-initdb.d

@@ -7,4 +7,5 @@ scikit-learn
 xgboost
 flask
 flask_sqlalchemy
-psycopg2
+psycopg2-binary
+flask-cors

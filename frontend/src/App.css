@@ -15,6 +15,26 @@ body {
   width: 30rem;
 }
 
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr, td {
+  border: 1px solid;
+  padding: 1rem;
+}
+
+
+.lower {
+  font-weight: normal;
+}
+
+.upper {
+  font-weight: bolder;
+  text-align: center;
+}
+
 .App nav {
   text-align: center;
 }
