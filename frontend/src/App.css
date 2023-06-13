@@ -55,11 +55,30 @@ body {
 
 .App nav {
     text-align: center;
+    padding: 10px;
+}
+
+.App nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 .App nav li {
-    display: inline;
-    padding: 0 1rem;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.App nav a {
+    color: #1463FF;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.App nav a:hover {
+    background-color: #1463FF;
+    color: white;
+    border-radius: 1rem;
 }
 
 @media only screen and (max-width: 30rem) {
