@@ -86,7 +86,7 @@ function Table() {
     }
 
     return (
-        <div className='App'>
+        <div className='Table'>
             <table>
                 <tr>
                     <th>name</th>
