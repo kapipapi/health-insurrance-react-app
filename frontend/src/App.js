@@ -1,5 +1,6 @@
 import './App.css';
 import React, {useState} from 'react';
+import logo from "./img/logo.png";
 import {BrowserRouter, Routes, Route, Outlet, Link} from "react-router-dom";
 
 export default function App(props) {
@@ -21,7 +22,12 @@ export default function App(props) {
 function Layout() {
     return (
         <div className='App'>
-            <h1 className="Title">Medical inssurance cost</h1>
+            <div className='header'>
+                <img src={logo} alt={"logo"} width={"100px"}/>
+                <h1 className="Title">
+                    Medical insurance cost
+                </h1>
+            </div>
             <nav>
                 <li>
                     <Link to="/">Form</Link>
@@ -170,7 +176,7 @@ function Form() {
                     </div>
 
                     <div class="formcarry-block">
-                        <button type="submit">Calculate inssurance cost</button>
+                        <button type="submit">Calculate insurance cost</button>
                     </div>
 
                 </form>
